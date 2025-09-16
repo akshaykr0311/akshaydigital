@@ -3,65 +3,107 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Akshay Digital | Learn Online Business</title>
+  <title>Akshay Digitalpreneur</title>
   <style>
-    body {margin:0; font-family:Arial, sans-serif; background:#f9f9f9; color:#333;}
-    header {background:#111; color:#fff; text-align:center; padding:60px 20px;}
-    header h1 {font-size:2.5rem; margin:0;}
-    header p {font-size:1.2rem; margin:10px 0 20px;}
-    header a {background:#25D366; color:#fff; padding:15px 30px; text-decoration:none; border-radius:30px; font-weight:bold;}
-    section {max-width:1000px; margin:50px auto; padding:20px;}
-    h2 {text-align:center; margin-bottom:20px;}
-    .about {text-align:center; line-height:1.6; font-size:1.1rem;}
-    .achievements {display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px;}
-    .achievements img {width:100%; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.2);}
-    .cta {text-align:center; margin:40px 0;}
-    .cta a {background:#25D366; color:#fff; padding:15px 40px; text-decoration:none; border-radius:30px; font-size:1.1rem; font-weight:bold;}
-    footer {background:#111; color:#fff; text-align:center; padding:20px; margin-top:40px;}
-    footer a {color:#25D366; text-decoration:none; font-weight:bold;}
+    body { margin: 0; font-family: Arial, sans-serif; background: #0f172a; color: white; }
+    header { text-align: center; padding: 80px 20px; background: linear-gradient(135deg,#4f46e5,#7c3aed); }
+    header img { width: 150px; border-radius: 50%; margin-bottom: 20px; }
+    header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+    header p { font-size: 1.2rem; }
+    .section { padding: 60px 20px; max-width: 1200px; margin: auto; }
+    .section h2 { text-align: center; font-size: 2rem; margin-bottom: 40px; }
+    .achievements img { width: 200px; margin: 10px; border-radius: 12px; }
+    .packages { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+    .package { background: #1e293b; padding: 20px; border-radius: 12px; width: 260px; text-align: center; }
+    .package img { width: 120px; margin-bottom: 20px; }
+    .price { font-size: 1.5rem; margin: 15px 0; font-weight: bold; }
+    .btn { background: #22c55e; color: white; padding: 10px 20px; border: none; border-radius: 8px; text-decoration: none; display: inline-block; }
+    .faq { background: #111827; padding: 40px; border-radius: 12px; }
+    .faq p { margin: 10px 0; }
+    form { display: flex; flex-direction: column; gap: 15px; max-width: 500px; margin: auto; }
+    input, textarea { padding: 12px; border-radius: 8px; border: none; }
+    button { background: #4f46e5; color: white; padding: 12px; border: none; border-radius: 8px; }
+    footer { text-align: center; padding: 20px; background: #0f172a; margin-top: 40px; }
   </style>
 </head>
 <body>
-
-  <!-- Hero Section -->
   <header>
-    <h1>Akshay Kumar</h1>
-    <p>9+ Years of E-commerce Experience | Multi-Crore Revenue Generator | 7-Figure Affiliate Marketer | Business Mentor</p>
-    <a href="https://alvo.chat/67SS" target="_blank">Join on WhatsApp</a>
+    <img src="your-photo-link.jpg" alt="Akshay Photo">
+    <h1>Akshay Kr – Digital Entrepreneur</h1>
+    <p>9+ Years Experience | Crores in Revenue | 7-Figure Affiliate Marketer</p>
+    <a href="https://wa.me/918130047221" class="btn">Get Started on WhatsApp</a>
   </header>
 
-  <!-- About Section -->
-  <section>
+  <section class="section about">
     <h2>About Me</h2>
-    <p class="about">
-      I have been an e-commerce entrepreneur for the past <strong>9+ years</strong>, selling on platforms like Amazon and Flipkart. During this journey, I have generated <strong>multi-crore revenue</strong> through online sales and built multiple successful digital ventures.
-      <br><br>
-      Two years ago, I stepped into affiliate marketing and achieved <strong>7-figure profits</strong>, scaling my business to the next level. 
-      <br><br>
-      Along with building my own success, I am passionate about mentoring others. Over the years, I have guided many aspiring entrepreneurs, helping them start, grow, and succeed in their online business journey.
-    </p>
+    <p>Hi, I'm Akshay – a passionate digital entrepreneur with over 9 years of experience in e-commerce, affiliate marketing, and digital product sales. I have successfully generated revenue in crores and mentored countless learners to achieve their dreams. My mission is to empower people with the right skills and proven strategies to build a profitable online career.</p>
   </section>
 
-  <!-- Achievements Section -->
-  <section>
+  <section class="section achievements">
     <h2>My Achievements</h2>
-    <div class="achievements">
-      <img src="your-achievement-photo1.jpg" alt="Achievement 1">
-      <img src="your-achievement-photo2.jpg" alt="Achievement 2">
-      <img src="your-achievement-photo3.jpg" alt="Achievement 3">
+    <div style="text-align:center;">
+      <img src="achievement-photo1.jpg" alt="Achievement 1">
+      <img src="achievement-photo2.jpg" alt="Achievement 2">
+      <img src="achievement-photo3.jpg" alt="Achievement 3">
+      <img src="achievement-photo4.jpg" alt="Achievement 4">
     </div>
   </section>
 
-  <!-- CTA Section -->
-  <section class="cta">
-    <h2>Want to Learn Online Business With Me?</h2>
-    <a href="https://alvo.chat/67SS" target="_blank">Join on WhatsApp</a>
+  <section class="section packages">
+    <h2>Our Digital Packages</h2>
+    <div class="packages">
+      <div class="package">
+        <img src="pro-box.jpg" alt="Pro Package">
+        <h3>Pro</h3>
+        <p>Master digital marketing, copywriting, Facebook ads, and content creation. Lifetime access + certification + community support.</p>
+        <div class="price">₹11,800</div>
+        <a href="your-pro-link" class="btn">Buy Now</a>
+      </div>
+      <div class="package">
+        <img src="supreme-box.jpg" alt="Supreme Package">
+        <h3>Supreme</h3>
+        <p>Includes Pro + advanced digital, finance, and creative skills. Build unstoppable expertise for long-term success.</p>
+        <div class="price">₹17,700</div>
+        <a href="your-supreme-link" class="btn">Buy Now</a>
+      </div>
+      <div class="package">
+        <img src="premium-box.jpg" alt="Premium Package">
+        <h3>Premium</h3>
+        <p>Includes Pro & Supreme + advanced courses in tech, finance, and creativity. Designed for ambitious learners.</p>
+        <div class="price">₹22,999</div>
+        <a href="your-premium-link" class="btn">Buy Now</a>
+      </div>
+      <div class="package">
+        <img src="premiumplus-box.jpg" alt="Premium Plus Package">
+        <h3>Premium Plus</h3>
+        <p>All courses + specialized training in dropshipping, VFX, Python, fitness, and Print on Demand.</p>
+        <div class="price">₹29,999</div>
+        <a href="your-premiumplus-link" class="btn">Buy Now</a>
+      </div>
+    </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Akshay Digital | Connect with me on <a href="https://alvo.chat/67SS" target="_blank">WhatsApp</a></p>
-  </footer>
+  <section class="section faq">
+    <h2>Frequently Asked Questions</h2>
+    <p><strong>Q:</strong> How do I access the courses?<br><strong>A:</strong> Once you purchase, you’ll get lifetime access instantly via login.</p>
+    <p><strong>Q:</strong> Do I get a certificate?<br><strong>A:</strong> Yes, every course comes with a certification.</p>
+    <p><strong>Q:</strong> Can I start without experience?<br><strong>A:</strong> Absolutely! Courses are beginner-friendly and step-by-step.</p>
+  </section>
 
+  <section class="section contact">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:akshaykr0311@gmail.com">akshaykr0311@gmail.com</a></p>
+    <p>Phone: <a href="tel:+918130047221">+91 8130047221</a></p>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" rows="4" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Akshay Kr | All Rights Reserved</p>
+  </footer>
 </body>
 </html>
