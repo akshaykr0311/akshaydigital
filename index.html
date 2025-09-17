@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -83,6 +84,74 @@
       .hero h1{font-size:28px}
       .avatar img{height:220px}
     }
+/* 📱 Mobile Responsive Fixes */
+@media(max-width:768px){
+  /* Hero Section */
+  .hero-inner{
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-left, .hero-right{
+    width: 100%;
+    min-width: unset;
+  }
+  .hero-right{
+    margin-top: 16px;
+  }
+
+  /* About Section */
+  .split{
+    flex-direction: column;
+    text-align: center;
+  }
+  .avatar{
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+  .avatar img{
+    width: 100%;
+    height: auto;
+  }
+
+  /* Achievements */
+  .cards{
+    flex-direction: column;
+    gap: 16px;
+  }
+  .card img{
+    width: 100%;
+    aspect-ratio: 1 / 1; /* 📌 profile-square style */
+    object-fit: cover;
+  }
+
+  /* Courses */
+  .courses{
+    display: grid;
+    grid-template-columns: 1fr; /* 📌 ek row me ek course */
+    gap: 20px;
+  }
+  .course .book img{
+    width: 100%;
+    height: auto; /* 📌 responsive book size */
+  }
+
+  /* FAQ */
+  .faq-item h4{
+    font-size: 16px;
+  }
+  .faq-item p{
+    font-size: 14px;
+  }
+
+  /* Footer */
+  footer{
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+}
+
   </style>
 </head>
 <body>
