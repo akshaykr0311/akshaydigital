@@ -1,111 +1,317 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Akshay Digitalpreneur</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Akshay | Digital Entrepreneur</title>
   <style>
-    body { margin: 0; font-family: Arial, sans-serif; background: #0f172a; color: white; }
-    header { text-align: center; padding: 80px 20px; background: linear-gradient(135deg,#4f46e5,#7c3aed); }
-    header img { width: 150px; border-radius: 50%; margin-bottom: 20px; }
-    header h1 { font-size: 2.5rem; margin-bottom: 10px; }
-    header p { font-size: 1.2rem; }
-    .section { padding: 60px 20px; max-width: 1200px; margin: auto; }
-    .section h2 { text-align: center; font-size: 2rem; margin-bottom: 40px; }
-    .achievements img { width: 200px; margin: 10px; border-radius: 12px; }
-    .packages { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
-    .package { background: #1e293b; padding: 20px; border-radius: 12px; width: 260px; text-align: center; }
-    .package img { width: 120px; margin-bottom: 20px; }
-    .price { font-size: 1.5rem; margin: 15px 0; font-weight: bold; }
-    .btn { background: #22c55e; color: white; padding: 10px 20px; border: none; border-radius: 8px; text-decoration: none; display: inline-block; }
-    .faq { background: #111827; padding: 40px; border-radius: 12px; }
-    .faq p { margin: 10px 0; }
-    form { display: flex; flex-direction: column; gap: 15px; max-width: 500px; margin: auto; }
-    input, textarea { padding: 12px; border-radius: 8px; border: none; }
-    button { background: #4f46e5; color: white; padding: 12px; border: none; border-radius: 8px; }
-    footer { text-align: center; padding: 20px; background: #0f172a; margin-top: 40px; }
+    :root{
+      --primary-1: #0b5fb6; /* adjust to match idigitalpreneur.com */
+      --primary-2: #0ea3ff; /* adjust to match idigitalpreneur.com */
+      --accent: #ffd166;
+      --bg: #0f1724;
+      --card: #0b1220;
+      --muted: #9aa7be;
+      --glass: rgba(255,255,255,0.04);
+      --maxw: 1100px;
+      --radius: 12px;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,var(--bg),#071023);color:#eef2ff;line-height:1.45}
+    a{color:inherit}
+    .container{max-width:var(--maxw);margin:0 auto;padding:24px}
+
+    /* Header */
+    header{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{font-weight:700;letter-spacing:0.2px}
+    .nav{display:flex;gap:18px;align-items:center}
+    .nav a{color:var(--accent);text-decoration:none;font-weight:600}
+    .btn{background:linear-gradient(90deg,var(--primary-1),var(--primary-2));border:none;color:#fff;padding:10px 14px;border-radius:10px;cursor:pointer;font-weight:700}
+
+    /* Hero */
+    .hero{min-height:64vh;display:flex;align-items:center;justify-content:center;padding:40px 0;background:radial-gradient(1200px 400px at 10% 10%, rgba(14,163,255,0.06), transparent), linear-gradient(135deg,var(--primary-1),var(--primary-2));border-radius:18px;margin-bottom:22px}
+    .hero-inner{display:flex;gap:36px;align-items:center;justify-content:space-between;max-width:var(--maxw);width:100%;padding:36px;background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));border-radius:16px}
+    .hero-left{flex:1}
+    .hero h1{font-size:34px;margin:0 0 10px}
+    .hero p{margin:0 0 18px;color:rgba(255,255,255,0.92)}
+    .hero .actions{display:flex;gap:12px}
+
+    /* About */
+    .split{display:flex;gap:24px;align-items:center;margin:28px 0}
+    .avatar{flex:0 0 260px;background:var(--glass);padding:12px;border-radius:12px;text-align:center}
+    .avatar img{width:100%;height:260px;object-fit:cover;border-radius:10px}
+    .about-text{flex:1}
+
+    /* Achievements */
+    .cards{display:flex;gap:16px;margin:18px 0}
+    .card{flex:1;background:var(--card);padding:12px;border-radius:12px;text-align:center}
+    .card img{width:100%;height:260px;object-fit:cover;border-radius:10px}
+    .card h4{margin:10px 0 6px}
+
+    /* Why industry */
+    .why{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:22px;border-radius:12px;margin:18px 0}
+    .why-grid{display:flex;gap:14px;margin-top:12px}
+    .why-item{flex:1;padding:18px;background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));border-radius:12px}
+    .why-item h3{margin:0 0 8px;color:var(--accent)}
+
+    /* Courses */
+    .courses{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:18px 0}
+    .course{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:14px;border-radius:12px}
+    .course .book{height:240px;background:var(--glass);display:flex;align-items:center;justify-content:center;border-radius:8px;margin-bottom:12px}
+    .price{display:flex;align-items:center;gap:10px;font-weight:700}
+    .price .orig{text-decoration:line-through;color:var(--muted);font-weight:600}
+    .price .disc{color:var(--accent);font-size:18px}
+
+    /* Big CTA */
+    .big-cta{display:flex;justify-content:center;margin:28px 0}
+    .big-cta .btn-big{padding:16px 26px;border-radius:16px;font-size:18px}
+
+    /* FAQ */
+    .faq{margin:18px 0}
+    .faq-item{background:var(--card);padding:12px;border-radius:10px;margin-bottom:8px}
+    .faq-item h4{margin:0;cursor:pointer}
+    .faq-item p{margin:8px 0 0;color:var(--muted);display:none}
+
+    /* Contact */
+    footer{margin:26px 0;padding:20px;border-radius:10px;background:rgba(255,255,255,0.02);display:flex;justify-content:space-between;align-items:center}
+
+    /* Responsive */
+    @media(max-width:880px){
+      .split{flex-direction:column}
+      .hero-inner{flex-direction:column}
+      .hero h1{font-size:28px}
+      .avatar img{height:220px}
+    }
   </style>
 </head>
 <body>
-  <header>
-    <img src="https://i.postimg.cc/NjHrNKWh/Whats-App-Image-2025-09-16-at-3-20-34-PM-1.jpg" alt="Akshay Photo">
-    <h1>Akshay Kumar – Digital Entrepreneur</h1>
-    <p>9 Years Amazon/Flipkart Marketing Experience | Affiliate Marketer | 8-Figure Earner </p>
-    <a href="https://wa.me/918130047221" class="btn">Get Started on WhatsApp</a>
-  </header>
+  <div class="container">
+    <header>
+      <div class="brand">Akshay Digital Marketer</div>
+      <nav class="nav">
+        <a href="#about">About Me</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#courses">Courses</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn" href="#contact">Contact</a>
+      </nav>
+    </header>
 
-  <section class="section about">
-    <h2>About Me</h2>
-    <p>Hi, I'm Akshay – a passionate digital entrepreneur with over 9 years of experience in e-commerce Industry Amazon,Flipkart & 2 years Of affiliate marketing. I have successfully generated revenue in crores and mentored Many learners to achieve their dreams. My mission is to empower people with the right skills and proven strategies to build a profitable online career.</p>
-  </section>
+    <!-- Hero -->
+    <section class="hero" aria-label="Hero">
+      <div class="hero-inner">
+        <div class="hero-left">
+          <h1>Transform Your Life with <strong>Akshay</strong> — Digital Entrepreneur</h1>
+          <p>9+ Years Amazon & Flipkart Expertise • Affiliate Marketer • 7-Figure Earner</p>
+          <div class="actions">
+            <button class="btn" onclick="document.getElementById('courses').scrollIntoView({behavior:'smooth'})">Explore Packages</button>
+            <button class="btn" onclick="openWhatsApp()">Get Started</button>
+          </div>
+        </div>
+        <div class="hero-right" style="min-width:260px;max-width:320px">
+          <div style="background:rgba(255,255,255,0.02);padding:14px;border-radius:12px;text-align:center">
+            <p style="margin:0;font-weight:700">Free Consultation</p>
+            <p style="margin:6px 0 12px;color:var(--muted)">Chat directly on WhatsApp</p>
+            <button class="btn" onclick="openWhatsApp()">Talk with Akshay</button>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <section class="section achievements">
-    <h2>My Achievements</h2>
-    <div style="text-align:center;">
-      <img src="achievement-photo1.jpg" alt="Achievement 1">
-      <img src="achievement-photo2.jpg" alt="Achievement 2">
-      <img src="achievement-photo3.jpg" alt="Achievement 3">
-      <img src="achievement-photo4.jpg" alt="Achievement 4">
+    <!-- About -->
+    <section id="about" class="split">
+      <div class="avatar">
+        <!-- Replace the src below with your photo URL -->
+        <img id="about-photo" src="https://i.postimg.cc/C5kz3mwK/Whats-App-Image-2025-09-17-at-2-12-43-PM.jpg" alt="Akshay - Your Photo (replace src)" />
+              </div>
+      <div class="about-text">
+        <h2>About Me</h2>
+        <p>Hi, I’m Akshay. Over the past 9+ years, I’ve built multiple income streams through Amazon, Flipkart, and affiliate marketing. My mission is to help everyday people unlock digital skills and create real financial growth — no matter where they’re starting from.</p>
+      </div>
+    </section>
+
+    <!-- Achievements -->
+    <section id="achievements">
+      <h2>My Achievements</h2>
+      <div class="cards">
+        <div class="card">
+          <img id="ach-1" src="https://i.postimg.cc/wM50qKzy/Whats-App-Image-2025-09-17-at-2-12-47-PM-1.jpg" alt="Achievement 1 (replace src)" />
+          <h4>My First Car Baught in 2017</h4>
+        </div>
+        <div class="card">
+          <img id="ach-2" src="https://i.postimg.cc/ydcTjqkQ/Whats-App-Image-2025-09-16-at-4-14-51-PM.jpg" alt="Achievement 2 (replace src)" />
+          <h4>Self Birthday Gift</h4>
+        </div>
+        <div class="card">
+          <img id="ach-3" src="https://i.postimg.cc/CxrJLH3N/Whats-App-Image-2025-09-16-at-4-13-45-PM.jpg" alt="Achievement 3 (replace src)" />
+          <h4>My 3rd Achivement</h4>
+        </div>
+      </div>
+      <p style="color:var(--muted)">Tip: Never Give Up </p>
+    </section>
+
+    <!-- Why this industry -->
+    <section class="why">
+      <h2>Why This Industry?</h2>
+      <p>The digital skills industry is one of the most reliable and scalable businesses for middle-class families. With the right training you can convert small efforts into consistent income streams and unlock multiple opportunities for growth.</p>
+      <div class="why-grid">
+        <div class="why-item">
+          <h3>Achieve Real Dreams</h3>
+          <p>For middle-class families, this industry turns realistic goals into real results — a path to financial independence and upward mobility.</p>
+        </div>
+        <div class="why-item">
+          <h3>Endless Future Opportunities</h3>
+          <p>Learning these skills opens hundreds of future routes — freelancing, agency work, product creation, or scaling a business.</p>
+        </div>
+        <div class="why-item">
+          <h3>Low Risk, High Rewards</h3>
+          <p>With proper training, even small efforts generate consistent income streams and long-term growth.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Courses -->
+    <section id="courses">
+      <h2>Course Details — IDigitalPreneur</h2>
+      <p>40+ courses and upskilling programs covering every aspect of digital marketing and online business. Courses are budget-friendly (₹1,700 – ₹30,000) and designed for practical, market-ready results.</p>
+
+      <div class="courses">
+        <!-- Pro -->
+        <div class="course">
+          <div class="book">
+            <!-- Replace src with book-style image -->
+            <img id="course-pro-img" src="https://i.postimg.cc/5tDkKw1s/Untitled-design-2025-09-17-T160217-000.png" alt="Pro Course Image" style="height:100%;width:100%;object-fit:cover;border-radius:6px" />
+          </div>
+          <h3>Pro</h3>
+          <p>Unlock Pro courses plus specialized training in Digital Marketing, Instagram Automation, Wondershare Filmora, and more. Potential to earn ₹10,000–₹30,000 monthly.</p>
+          <div class="price"><span class="orig">₹11,800</span><span class="disc">₹6,999</span></div>
+          <p style="color:var(--muted);font-size:13px;margin-top:8px">Limited Time Discount Price</p>
+          <button class="btn" onclick="openWhatsApp('Pro - ₹6,999')">Buy Now</button>
+        </div>
+
+        <!-- Supreme -->
+        <div class="course">
+          <div class="book"><img id="course-sup-img" src="https://i.postimg.cc/rFp3myhC/Untitled-design-2025-09-17-T160616-863.png" alt="Supreme Course Image" style="height:100%;width:100%;object-fit:cover;border-radius:6px" /></div>
+          <h3>Supreme</h3>
+          <p>Unlock all Pro courses plus specialized training in Crypto, Forex, Premiere Pro, and more. Potential to earn ₹30,000–₹50,000 monthly.</p>
+          <div class="price"><span class="orig">₹17,700</span><span class="disc">₹11,800</span></div>
+          <p style="color:var(--muted);font-size:13px;margin-top:8px">Limited Time Discount Price</p>
+          <button class="btn" onclick="openWhatsApp('Supreme - ₹11,800')">Buy Now</button>
+        </div>
+
+        <!-- Premium -->
+        <div class="course">
+          <div class="book"><img id="course-prem-img" src="https://i.postimg.cc/nLMqj5yW/Untitled-design-2025-09-17-T160827-004.png" alt="Premium Course Image" style="height:100%;width:100%;object-fit:cover;border-radius:6px" /></div>
+          <h3>Premium</h3>
+          <p>Unlock all Pro, Supreme courses plus specialized training in Business Automation, Stock, Web development, and more. Potential to earn ₹50,000–₹80,000 monthly.</p>
+          <div class="price"><span class="orig">₹22,999</span><span class="disc">₹15,999</span></div>
+          <p style="color:var(--muted);font-size:13px;margin-top:8px">Limited Time Discount Price</p>
+          <button class="btn" onclick="openWhatsApp('Premium - ₹15,999')">Buy Now</button>
+        </div>
+
+        <!-- Premium Plus -->
+        <div class="course">
+          <div class="book"><img id="course-premplus-img" src="https://i.postimg.cc/13vpzPj6/Untitled-design-2025-09-17-T160937-710.png" alt="Premium Plus Course Image" style="height:100%;width:100%;object-fit:cover;border-radius:6px" /></div>
+          <h3>Premium Plus</h3>
+          <p>Unlock all Pro, Supreme, and Premium courses plus specialized training in VFX, Python, fitness, and more. Potential to earn ₹80,000–₹1,00,000 monthly.</p>
+          <div class="price"><span class="orig">₹29,999</span><span class="disc">₹21,999</span></div>
+          <p style="color:var(--muted);font-size:13px;margin-top:8px">Limited Time Discount Price</p>
+          <button class="btn" onclick="openWhatsApp('Premium Plus - ₹21,999')">Buy Now</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Big CTA -->
+    <div class="big-cta">
+      <button class="btn btn-big" onclick="openWhatsApp()">Talk with Akshay – Click Here</button>
     </div>
-  </section>
 
-  <section class="section packages">
-    <h2>Our Digital Packages</h2>
-    <div class="packages">
-      <div class="package">
-        <img src="pro-box.jpg" alt="Pro Package">
-        <h3>Pro</h3>
-        <p>Master digital marketing, copywriting, Facebook ads, and content creation. Lifetime access + certification + community support.</p>
-        <div class="price">₹11,800</div>
-        <a href="your-pro-link" class="btn">Buy Now</a>
-      </div>
-      <div class="package">
-        <img src="supreme-box.jpg" alt="Supreme Package">
-        <h3>Supreme</h3>
-        <p>Includes Pro + advanced digital, finance, and creative skills. Build unstoppable expertise for long-term success.</p>
-        <div class="price">₹17,700</div>
-        <a href="your-supreme-link" class="btn">Buy Now</a>
-      </div>
-      <div class="package">
-        <img src="premium-box.jpg" alt="Premium Package">
-        <h3>Premium</h3>
-        <p>Includes Pro & Supreme + advanced courses in tech, finance, and creativity. Designed for ambitious learners.</p>
-        <div class="price">₹22,999</div>
-        <a href="your-premium-link" class="btn">Buy Now</a>
-      </div>
-      <div class="package">
-        <img src="premiumplus-box.jpg" alt="Premium Plus Package">
-        <h3>Premium Plus</h3>
-        <p>All courses + specialized training in dropshipping, VFX, Python, fitness, and Print on Demand.</p>
-        <div class="price">₹29,999</div>
-        <a href="your-premiumplus-link" class="btn">Buy Now</a>
-      </div>
-    </div>
-  </section>
+    <!-- FAQ -->
+    <section id="faq" class="faq">
+      <h2>FAQ</h2>
 
-  <section class="section faq">
-    <h2>Frequently Asked Questions</h2>
-    <p><strong>Q:</strong> How do I access the courses?<br><strong>A:</strong> Once you purchase, you’ll get lifetime access instantly via login.</p>
-    <p><strong>Q:</strong> Do I get a certificate?<br><strong>A:</strong> Yes, every course comes with a certification.</p>
-    <p><strong>Q:</strong> Can I start without experience?<br><strong>A:</strong> Absolutely! Courses are beginner-friendly and step-by-step.</p>
-  </section>
+      <div class="faq-item">
+        <h4>What happens after I buy?</h4>
+        <p>You get instant access to your dashboard with lifetime access to your courses, live training invites, and community groups — no waiting, no friction.</p>
+      </div>
 
-  <section class="section contact">
-    <h2>Contact Me</h2>
-    <p>Email: <a href="mailto:akshaykr0311@gmail.com">akshaykr0311@gmail.com</a></p>
-    <p>Phone: <a href="tel:+918130047221">+91 8130047221</a></p>
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" rows="4" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
+      <div class="faq-item">
+        <h4>Can I actually learn and earn with this, or is it just theory?</h4>
+        <p>Yes. Every course is built with real-world application in mind — live tasks, mentorship, and market-ready skills. We don’t just teach; we train you to implement.</p>
+      </div>
 
-  <footer>
-    <p>© 2025 Akshay Kr | All Rights Reserved</p>
-  </footer>
+      <div class="faq-item">
+        <h4>What makes this different from a YouTube tutorial or another random course?</h4>
+        <p>IDP ecosystem blends structured certification, expert mentorship, community, and execution plans — not just videos. You don’t just watch — you build.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>I’m already working/studying. Can I still manage this?</h4>
+        <p>Yes. All training sessions are self-paced and modular, designed for people with busy schedules — you can grow without burning out.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Is it important to make videos or reels?</h4>
+        <p>No, Online work does not mean that you have to create videos and reels. You can work online without creating videos and reels, without showing your face and name too.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>How much time do I need to give daily?</h4>
+        <p>That depends on your availability. You can do work anytime in 24hrs as per you. It can be 2 hrs a day or 15 hrs a day. Enquire Now - Get guidance from our coach on How much time you should give as per your requirements!</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Is IDigitalPreneur all about only affiliate marketing?</h4>
+        <p>No. You can learn skills and start individually as a freelancer as well. Not only this, you are capable enough to start your online business or become a Social Media Influencer on Instagram and YouTube too.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Can a Housewife, Student, Working Professional do this work?</h4>
+        <p>Yes, Absolutely! This work can be done by anyone.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>How can I tell if a course is fake or unsafe?</h4>
+        <p>Check trainer credentials, student testimonials, clear refund policies, and look for real-world results. We provide mentorship, community proof, and direct contact options for verification.</p>
+      </div>
+
+    </section>
+
+    <!-- Contact -->
+    <footer id="contact">
+      <div>
+        <strong>Contact</strong>
+        <div style="color:var(--muted);">Email: <a href="mailto:akshaykr0311@gmail.com">akshaykr0311@gmail.com</a></div>
+        <div style="color:var(--muted);">Phone: <a href="tel:+918130047221">8130047221</a></div>
+      </div>
+      <div>
+        <small style="color:var(--muted)">© Akshay Digital Marketer</small>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    // Simple FAQ accordion
+    document.querySelectorAll('.faq-item h4').forEach(h => {
+      h.addEventListener('click', ()=>{
+        const p = h.nextElementSibling;
+        const isVisible = p.style.display === 'block';
+        document.querySelectorAll('.faq-item p').forEach(x=>x.style.display='none');
+        p.style.display = isVisible ? 'none' : 'block';
+      })
+    });
+
+    // Replace this phone number with your number when using in production
+    const PHONE = '918130047221'; // country code +91 + phone (no + sign)
+
+    function openWhatsApp(product=''){
+      const text = encodeURIComponent(product ? `Hi Akshay, I want to enroll in: ${product}` : 'Hi Akshay, I want to get started.');
+      const url = `https://wa.me/${PHONE}?text=${text}`;
+      window.open(url,'_blank');
+    }
+  </script>
 </body>
 </html>
-
-
